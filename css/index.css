@@ -12,6 +12,13 @@
     --verde-btn: #2cbe82;
     --fonte-1: 'Nunito', sans-serif;
     --fonte-2: 'Poppins', sans-serif;
+    --cor-dia-1: #FFA246;
+    --cor-dia-2: #35E185;
+    --cor-dia-3: #6688FF;
+    --cor-dia-4: #66D1FF;
+    --cor-dia-5: #B266FF;
+    --cor-dia-6: #FF66D4;
+    --cor-dia-7: #FF6666;
 }/* declarado para facilitar busca OBS EXCLUIR*/
 
 body {
@@ -21,8 +28,8 @@ body {
     width: 100vw;
     background-image: url(../img/bola-LogoCompasso\ 1.svg);
     background-repeat: no-repeat;
-    background-position: 60rem 23rem;
-    background-size: auto;
+    background-size: 45%;
+    background-position: 55rem 21rem;
 }
 
 .cabecalho-header {
@@ -125,3 +132,69 @@ body {
 .seletor-btn {
     margin: 0 1rem;
 }
+
+.card-dias-hora {
+    display: flex;
+    height: 7vh;
+    width: auto;
+}
+
+.agenda-card-hora {
+    background-color: var(--bg-cor-primaria);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 2rem;
+}
+
+.agenda-hora {
+    margin-left: 1rem;
+    padding: 2px 5px;
+    border-radius: 10px;
+}
+
+.linha-card-dia {
+    width: 86vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin: 0 2rem;
+}
+
+.agenda-card-dia {
+    padding: 8px 18px;
+    border-radius: 15px 15px 0 0;
+    color: var(--cor-texto-secundario);
+    display: flex;
+    font-weight: 500;
+}
+/* cORES DEVEM TER VARIAVEIS */
+.agenda-card-dia-1 {
+    background-color: var(--cor-dia-1);
+}
+
+.agenda-card-dia-2 {
+    background-color: var(--cor-dia-2);
+}
+
+.agenda-card-dia-3 {
+    background-color:var(--cor-dia-3);
+}
+
+.agenda-card-dia-4 {
+    background-color: var(--cor-dia-4);
+}
+
+.agenda-card-dia-5 {
+    background-color: var(--cor-dia-5);
+}
+
+.agenda-card-dia-6 {
+    background-color: var(--cor-dia-6);
+}
+
+.agenda-card-dia-7 {
+    background-color: var(--cor-dia-7);
+}
+
