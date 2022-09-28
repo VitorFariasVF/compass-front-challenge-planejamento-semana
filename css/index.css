@@ -16,12 +16,18 @@
 
 body {
     font-family: var(--fonte-2);
-    background-color: blueviolet; /*Cor para teste*/
-    display: flex;
-    height: "";
+    background-color: var(--cinza-claro); 
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../img/bola-LogoCompasso\ 1.svg);
+    background-repeat: no-repeat;
+    background-position: 60rem 23rem;
+    background-size: auto;
 }
 
 .cabecalho-header {
+    height: 5.5vh;
+    width: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,8 +35,7 @@ body {
     padding-left: 0;
     border-radius: 35px;
     background-color:var(--bg-cor-primaria);
-    /*box-shadow: 24px solid rgba(168, 168, 168, 0.25);*/
-    width: 100vw;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 .cabecalho-titulo {
@@ -72,6 +77,10 @@ body {
     background-color: var(--vermelho-btn);
 }
 
+.cabecalho-hora {
+    margin-right: 1rem;
+}
+
 .cabecalho-hora h2 {
     font-size: 48px;
     font-weight: 400;
@@ -80,4 +89,39 @@ body {
 .cabecalho-hora p {
     font-size: 20px;
     font-weight: 400;
+}
+
+.seletor-formulario-form {
+    display: flex;
+    margin: 1em;
+    justify-content: center;
+    
+}
+
+.seletor-atividade {
+    padding-right: 220px;
+    padding-left: 60px;
+    margin: 0 1rem;
+}
+
+.seletor-dia {
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 0 1rem;
+}
+
+.seletor-hora {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin: 0 1rem;
+}
+
+.seletor-atividade, .seletor-dia, .seletor-hora {
+    background-color: var(--bg-cor-primaria);
+    border: .1rem solid var(--verde-btn);
+    border-radius: 10px;
+}
+
+.seletor-btn {
+    margin: 0 1rem;
 }
