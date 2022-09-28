@@ -1,3 +1,13 @@
 :root {
-    --none: #000000;
+    --azul-principal: #6688ff;
+    --bg-cor-primaria: #FFFFFF;
+    --bg-cor-secundaria : #dedede;
+    --cor-texto-primario: #404040;
+    --cor-texto-secundario: #fff;
+    --cinza-escuro: #666e7d;
+    --cinza-claro: #dcdce3;
+    --vermelho-btn: #98031e;
+    --verde-btn: #2cbe82;
+    --fonte-1: 'Nunito', sans-serif;
+    --fonte-2: 'Poppins', sans-serif;
 }
