@@ -1,0 +1,21 @@
+@import url(./reset.css);
+@import url(./variaveis.css);
+
+body {
+    background-color: blueviolet; /*Cor para teste*/
+    display: flex;
+    height: "";
+}
+
+.cabecalho-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    padding-left: 0;
+    border-radius: 35px;
+    background-color: #FFF;
+    box-shadow: 24px solid rgba(168, 168, 168, 0.25);
+}
+
+
