@@ -21,8 +21,8 @@
             <button class="cabecalho-botao-excluir cabecalho-botao">Excluir localStorage</button>
         </div>
         <div class="cabecalho-hora">
-            <h2>10:00</h2>
-            <p>31 Fevereiro de 1968</p>
+            <h2 id="hora-cabecalho"></h2>
+            <p id="data-cabecalho"></p>
         </div>
     </header>
     <main class="seletor-formulario">
@@ -39,6 +39,7 @@
                   <option value="sabado">Sábado</option>
                 </select>
                 <select name="hora" id="hora" class="seletor-hora">
+                    <!--<input type="date">-->
                     <option value="0800">08:00</option>
                     <option value="0830">08:30</option>
                     <option value="0900">09:00</option>
@@ -79,5 +80,6 @@
             </div>
         </section>
     </main> 
+    <script src="./js/index.js" ></script>
 </body>
 </html>
