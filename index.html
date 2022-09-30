@@ -28,7 +28,7 @@
     <main class="seletor-formulario">
         <section>
             <form class="seletor-formulario-form">
-                <input type="texto" placeholder="Atividade" class="seletor-atividade">
+                <input type="texto" placeholder="Atividade" class="seletor-atividade" id="atividade" name="atividade">
                 <select name="dia" id="dia" class="seletor-dia">
                   <option value="domingo">Domingo</option>
                   <option value="segunda">Segunda-feira</option>
@@ -38,8 +38,8 @@
                   <option value="sexta">Sexta-feira</option>
                   <option value="sabado">Sábado</option>
                 </select>
-                <select name="hora" id="hora" class="seletor-hora">
-                    <!--<input type="date">-->
+                <input type="time" class="seletor-hora" id="hora" name="hora">
+                <!--<select name="hora" id="hora" class="seletor-hora">
                     <option value="0800">08:00</option>
                     <option value="0830">08:30</option>
                     <option value="0900">09:00</option>
@@ -59,10 +59,10 @@
                     <option value="1530">16:00</option>
                     <option value="1600">16:30</option>
                     <option value="1630">17:00</option>
-                    <option value="1730">17:30</option>
+                    <option value="1730">17:30</option>-->
                 </select>
-                <button class="cabecalho-botao-salvar cabecalho-botao seletor-btn">Adicionar atividade!</button>
-                <button class="cabecalho-botao-excluir cabecalho-botao seletor-btn">Excluir Todos!</button>
+                <button type="button" onclick="addAtividade()" class="cabecalho-botao-salvar cabecalho-botao seletor-btn">Adicionar atividade!</button>
+                <button type="button" onclick="carregar()" class="cabecalho-botao-excluir cabecalho-botao seletor-btn">Excluir Todos!</button>
               </form>
         </section>
         <section class="agenda-semanal">
@@ -78,6 +78,10 @@
                     <p class="agenda-card-dia agenda-card-dia-7">Domingo</p>
                 </section>
             </div>
+        </section>
+        <section class="cards-hora">
+        </section>
+        <section class="cards-atividades">
         </section>
     </main> 
     <script src="./js/index.js" ></script>

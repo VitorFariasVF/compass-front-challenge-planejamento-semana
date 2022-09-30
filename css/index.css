@@ -169,7 +169,6 @@ body {
     display: flex;
     font-weight: 500;
 }
-/* cORES DEVEM TER VARIAVEIS */
 .agenda-card-dia-1 {
     background-color: var(--cor-dia-1);
 }
@@ -198,3 +197,13 @@ body {
     background-color: var(--cor-dia-7);
 }
 
+.tela-atividades {
+    width: 70vw;
+    max-width: 70vw;
+    height: 70vh;
+    max-height: 70vh;
+    display: flex;
+    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: auto;
+}
