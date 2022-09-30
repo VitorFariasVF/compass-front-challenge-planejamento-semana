@@ -21,3 +21,4 @@ mostraHora();
 mostraData();
 setInterval(mostraHora, 1) /*Atualiza horario*/
 
+function 
