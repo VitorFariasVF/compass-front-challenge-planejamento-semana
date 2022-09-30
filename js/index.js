@@ -12,7 +12,7 @@ function mostraData() {
     var dia = new Date().getDate();
     var ano = new Date().getFullYear();
     var mesAno = new Date().getMonth();
-    var mesLista = ["Janeiro", "Fevereiro", "Março", "Abril",   "Maio", "Junho", "Julho", "Agosto", "Setenbro", "Outubro", "Novembro", "Dezembro"];
+    var mesLista = ["Janeiro", "Fevereiro", "Março", "Abril",   "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
     var mes = mesLista[mesAno]
     document.getElementById("data-cabecalho").innerHTML = (dia + " " + mes + " " + ano);
 }
@@ -40,16 +40,21 @@ function novoCard() {
     var textoConteudoA = document.createTextNode(localStorage.atividade);
     var textoDia = document.createElement("p");
     var textoConteudoD = document.createTextNode(localStorage.dia);
-    var textoHora = document.createElement("p");
-    var textoConteudoH = document.createTextNode(localStorage.hora);
+    const textoHora = document.createElement("p");
+    var textoConteudoH = document.createTextNode(localStorage.hora);    
     
     textoAtividade.appendChild(textoConteudoA);
     textoDia.appendChild(textoConteudoD);
     textoHora.appendChild(textoConteudoH);
     
-    console.log(textoAtividade, textoDia, textoHora);
-    /*var novoCard = document.getElementById("cards-atividades");
-    novoCard.appendChild(textoConteudoA);*/
+    console.log(textoAtividade, textoDia, textoHora)
+
+    var conteudoHora = document.getElementById("cardsHora")
+    conteudoHora.classList.add("cardshorap")
+    conteudoHora.appendChild(textoConteudoH)
+    var conteudoAtividade = document.getElementById("cardAtividades")
+    conteudoAtividade.classList.add("cardsatividadep")
+    conteudoAtividade.appendChild(textoConteudoA)
 }
 
 novoCard()
