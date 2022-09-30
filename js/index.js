@@ -21,4 +21,35 @@ mostraHora();
 mostraData();
 setInterval(mostraHora, 1) /*Atualiza horario*/
 
-function 
+function addAtividade() {
+    localStorage.atividade = document.getElementById("atividade").value;
+    localStorage.dia = document.getElementById("dia").value;
+    localStorage.hora = document.getElementById("hora").value;
+}
+
+function carregar() {
+    if (localStorage.atividade){
+        document.getElementById("atividade").value = localStorage.atividade;
+        document.getElementById("dia").value = localStorage.dia;
+        document.getElementById("hora").value = localStorage.hora;
+    }
+}
+
+function novoCard() {
+    var textoAtividade = document.createElement("p");
+    var textoConteudoA = document.createTextNode(localStorage.atividade);
+    var textoDia = document.createElement("p");
+    var textoConteudoD = document.createTextNode(localStorage.dia);
+    var textoHora = document.createElement("p");
+    var textoConteudoH = document.createTextNode(localStorage.hora);
+    
+    textoAtividade.appendChild(textoConteudoA);
+    textoDia.appendChild(textoConteudoD);
+    textoHora.appendChild(textoConteudoH);
+    
+    console.log(textoAtividade, textoDia, textoHora);
+    /*var novoCard = document.getElementById("cards-atividades");
+    novoCard.appendChild(textoConteudoA);*/
+}
+
+novoCard()
