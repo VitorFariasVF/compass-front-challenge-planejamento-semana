@@ -28,8 +28,8 @@
     <main class="seletor-formulario">
         <section>
             <form class="seletor-formulario-form">
-                <input type="texto" placeholder="Atividade" class="seletor-atividade" id="atividade" name="atividade">
-                <select name="dia" id="dia" class="seletor-dia">
+                <input type="texto" placeholder="Atividade" class="seletor-atividade" id="atividade" name="atividade" required>
+                <select name="dia" id="dia" class="seletor-dia" required>
                     <option value="segunda">Segunda-Feira</option>
                     <option value="terça">Terça-Feira</option>
                     <option value="quarta">Quarta-Feira</option>
@@ -38,7 +38,7 @@
                     <option value="sabado">Sábado</option>
                     <option value="domingo">Domingo</option>
                 </select>
-                <input type="time" class="seletor-hora" id="hora" name="hora">
+                <input type="time" class="seletor-hora" id="hora" name="hora" required>
                 <!--<select name="hora" id="hora" class="seletor-hora">
                     <option value="0800">08:00</option>
                     <option value="0830">08:30</option>
@@ -61,8 +61,8 @@
                     <option value="1630">17:00</option>
                     <option value="1730">17:30</option>-->
                 </select>
-                <button type="button" onclick="addAtividade()" class="cabecalho-botao-salvar cabecalho-botao seletor-btn">Adicionar atividade!</button>
-                <button type="button" onclick="carregar()" class="cabecalho-botao-excluir cabecalho-botao seletor-btn">Excluir Todos!</button>
+                <button type="submit" onclick="addAtividade()" class="cabecalho-botao-salvar cabecalho-botao seletor-btn">Adicionar atividade!</button>
+                <button type="button" onclick="excluirDia()" class="cabecalho-botao-excluir cabecalho-botao seletor-btn">Excluir Todos!</button>
               </form>
         </section>
         <section class="agenda-semanal">

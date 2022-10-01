@@ -1,5 +1,5 @@
 var tarefas = []  /*lista de tarefas*/
-
+var dia 
 
 function excluirLS() {
     localStorage.clear();
@@ -45,15 +45,14 @@ function addAtividade() {
     tarefa.hora = document.getElementById("hora").value;
     tarefasSalvas.push(tarefa)
     localStorage.setItem('tarefas', JSON.stringify(tarefasSalvas));
-    mostraCards();
+    mostraCards(this.diaSelecionado);
 }
 
-function carregar() {
-    if (localStorage.atividade){
-        document.getElementById("atividade").value = localStorage.atividade;
-        document.getElementById("dia").value = localStorage.dia;
-        document.getElementById("hora").value = localStorage.hora;
-    }
+function excluirDia() {
+    let tarefasSalvas = JSON.parse(localStorage.getItem('tarefas'))
+    tarefasSalvas = tarefasSalvas.filter(tarefasSalvas => tarefasSalvas.dia !== this.diaSelecionado )
+    localStorage.setItem('tarefas', JSON.stringify(tarefasSalvas));
+    mostraCards(this.diaSelecionado);
 }
 
 function novoCard(tarefa) {
@@ -61,6 +60,8 @@ function novoCard(tarefa) {
     var sectionCardHora = document.createElement("section");
     sectionCardHora.classList.add("cards-hora")
     sectionCardHora.classList.add("cardshorap")
+    var nomeclasse = "card-hora-dia-" + tarefa.dia
+    sectionCardHora.classList.add(nomeclasse)
 
     var sectionCardAtividade = document.createElement("section");
     sectionCardAtividade.classList.add("cards-atividades")
@@ -88,12 +89,12 @@ function novoCard(tarefa) {
 }
 
 function mostraCards(dia) {
+    this.diaSelecionado = dia;
     limparCards();
     let tarefasSalvas = JSON.parse(localStorage.getItem('tarefas'))
     tarefasSalvas = tarefasSalvas.filter(tarefasSalvas => tarefasSalvas.dia === dia);
     for (let index = 0; index < tarefasSalvas.length; index++) {
-        novoCard(tarefasSalvas[index]);
-        
+        novoCard(tarefasSalvas[index]);  
     }
 }
 

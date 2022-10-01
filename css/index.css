@@ -1,25 +1,5 @@
 @import url(./reset.css);
 @import url(./variaveis.css);
-:root {
-    --azul-principal: #6688ff;
-    --bg-cor-primaria: #FFFFFF;
-    --bg-cor-secundaria : #dedede;
-    --cor-texto-primario: #404040;
-    --cor-texto-secundario: #fff;
-    --cinza-escuro: #666e7d;
-    --cinza-claro: #dcdce3;
-    --vermelho-btn: #98031e;
-    --verde-btn: #2cbe82;
-    --fonte-1: 'Nunito', sans-serif;
-    --fonte-2: 'Poppins', sans-serif;
-    --cor-dia-1: #FFA246;
-    --cor-dia-2: #35E185;
-    --cor-dia-3: #6688FF;
-    --cor-dia-4: #66D1FF;
-    --cor-dia-5: #B266FF;
-    --cor-dia-6: #FF66D4;
-    --cor-dia-7: #FF6666;
-}/* declarado para facilitar busca OBS EXCLUIR*/
 
 body {
     font-family: var(--fonte-2);
@@ -40,7 +20,7 @@ body {
     align-items: center;
     padding: 2rem;
     padding-left: 0;
-    border-radius: 35px;
+    border-radius: 0 0 35px 35px;
     background-color:var(--bg-cor-primaria);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
@@ -76,12 +56,20 @@ body {
     margin: 5px;
 }
 
+
 .cabecalho-botao-salvar {
     background-color: var(--verde-btn);
 }
 
 .cabecalho-botao-excluir {
     background-color: var(--vermelho-btn);
+}
+.cabecalho-botao-salvar:hover {
+    background-color: var(--verde-btn-hover);
+}
+
+.cabecalho-botao-excluir:hover {
+    background-color: var(--vermelho-btn-hover);
 }
 
 .cabecalho-hora {
@@ -168,7 +156,14 @@ body {
     color: var(--cor-texto-secundario);
     display: flex;
     font-weight: 500;
+    transition: 0.025s;
 }
+
+.agenda-card-dia:hover {
+    padding: 10px 20px;
+    font-weight: 700;
+}
+
 .agenda-card-dia-1 {
     background-color: var(--cor-dia-1);
 }
@@ -197,20 +192,16 @@ body {
     background-color: var(--cor-dia-7);
 }
 
-.tela-atividades {
+/*.tela-atividades {
     display: flex;
     overflow: scroll;
     overflow-x: auto;
     overflow-y: auto;
     flex-direction: column;
-}
+}*/
 
 .container-tela {
     display: flex;
-    width: 70vw;
-    max-width: 70vw;
-    height: 70vh;
-    max-height: 70vh;
     overflow: scroll;
     overflow-x: auto;
     overflow-y: auto;
@@ -218,6 +209,12 @@ body {
 
 .tela-atividades, .tela-hora {
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: auto;
+    min-width: 80px;
 }
 
 .cardshorap {
@@ -244,4 +241,26 @@ body {
     border-radius: 10px;
     border-left: 10px solid #558ABB;
     margin: 1rem 1rem 0 0;
+}
+
+.card-hora-dia-segunda{
+    background-color: var(--cor-dia-1-40);
+}
+.card-hora-dia-terça{
+    background-color: var(--cor-dia-2-40);
+}
+.card-hora-dia-quarta{
+    background-color: var(--cor-dia-3-40);
+}
+.card-hora-dia-quinta{
+    background-color: var(--cor-dia-4-40);
+}
+.card-hora-dia-sexta{
+    background-color: var(--cor-dia-5-40);
+}
+.card-hora-dia-sabado{
+    background-color: var(--cor-dia-6-40);
+}
+.card-hora-dia-domingo{
+    background-color: var(--cor-dia-7-40);
 }
