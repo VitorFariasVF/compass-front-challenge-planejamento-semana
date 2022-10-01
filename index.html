@@ -30,13 +30,13 @@
             <form class="seletor-formulario-form">
                 <input type="texto" placeholder="Atividade" class="seletor-atividade" id="atividade" name="atividade">
                 <select name="dia" id="dia" class="seletor-dia">
-                  <option value="domingo">Domingo</option>
-                  <option value="segunda">Segunda-feira</option>
-                  <option value="terça">Terça-feira</option>
-                  <option value="quarta">Quarta-feira</option>
-                  <option value="quinta">Quinta-feira</option>
-                  <option value="sexta">Sexta-feira</option>
-                  <option value="sabado">Sábado</option>
+                    <option value="segunda">Segunda-Feira</option>
+                    <option value="terça">Terça-Feira</option>
+                    <option value="quarta">Quarta-Feira</option>
+                    <option value="quinta">Quinta-Feira</option>
+                    <option value="sexta">Sexta-Feira</option>
+                    <option value="sabado">Sábado</option>
+                    <option value="domingo">Domingo</option>
                 </select>
                 <input type="time" class="seletor-hora" id="hora" name="hora">
                 <!--<select name="hora" id="hora" class="seletor-hora">
@@ -69,20 +69,20 @@
             <div class="card-dias-hora">
                 <p class="agenda-card-hora agenda-hora">Horário</p>
                 <section class="linha-card-dia">
-                    <p class="agenda-card-dia agenda-card-dia-1">Segunda-feira</p>
-                    <p class="agenda-card-dia agenda-card-dia-2">Terça-feira</p>
-                    <p class="agenda-card-dia agenda-card-dia-3">Quarta-feira</p>
-                    <p class="agenda-card-dia agenda-card-dia-4">Quinta-feira</p>
-                    <p class="agenda-card-dia agenda-card-dia-5">Sexta-feira</p>
-                    <p class="agenda-card-dia agenda-card-dia-6">Sábado</p>
-                    <p class="agenda-card-dia agenda-card-dia-7">Domingo</p>
+                    <p onclick="mostraCards('segunda')" class="agenda-card-dia agenda-card-dia-1">Segunda-feira</p>
+                    <p onclick="mostraCards('terça')" class="agenda-card-dia agenda-card-dia-2">Terça-feira</p>
+                    <p onclick="mostraCards('quarta')" class="agenda-card-dia agenda-card-dia-3">Quarta-feira</p>
+                    <p onclick="mostraCards('quinta')" class="agenda-card-dia agenda-card-dia-4">Quinta-feira</p>
+                    <p onclick="mostraCards('sexta')" class="agenda-card-dia agenda-card-dia-5">Sexta-feira</p>
+                    <p onclick="mostraCards('sabado')" class="agenda-card-dia agenda-card-dia-6">Sábado</p>
+                    <p onclick="mostraCards('domingo')" class="agenda-card-dia agenda-card-dia-7">Domingo</p>
                 </section>
             </div>
         </section>
-        <section class="tela-atividades">
-            <section id="cardsHora" class="cards-hora">
+        <section class="container-tela">
+            <section id="colunaHora" class="tela-hora">
             </section>
-            <section id="cardAtividades" class="cards-atividades">
+            <section id = "atividades" class="tela-atividades">
             </section>
         </section>
     </main> 

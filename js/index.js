@@ -1,6 +1,9 @@
+var tarefas = []  /*lista de tarefas*/
+
+
 function excluirLS() {
-    localStorage.clear()
-    setInterval(novoCard, .01)
+    localStorage.clear();
+    limparCards();
 }
 
 
@@ -27,9 +30,22 @@ mostraData();
 setInterval(mostraHora, 1) /*Atualiza horario*/
 
 function addAtividade() {
-    localStorage.atividade = document.getElementById("atividade").value;
-    localStorage.dia = document.getElementById("dia").value;
-    localStorage.hora = document.getElementById("hora").value;
+    if (!localStorage.tarefas) {
+        var tarefas = []
+        //localStorage.tarefas = JSON.parse(tarefas);
+    }
+
+    let tarefa = new Object();
+    let tarefasSalvas = JSON.parse(localStorage.getItem('tarefas'))
+    if(tarefasSalvas == null){
+        tarefasSalvas = [];
+    }
+    tarefa.atividade = document.getElementById("atividade").value;
+    tarefa.dia = document.getElementById("dia").value;
+    tarefa.hora = document.getElementById("hora").value;
+    tarefasSalvas.push(tarefa)
+    localStorage.setItem('tarefas', JSON.stringify(tarefasSalvas));
+    mostraCards();
 }
 
 function carregar() {
@@ -40,26 +56,65 @@ function carregar() {
     }
 }
 
-function novoCard() {
-    var textoAtividade = document.createElement("p")
-    var textoConteudoA = document.createTextNode(localStorage.atividade)
-    var textoDia = document.createElement("p")
-    var textoConteudoD = document.createTextNode(localStorage.dia)
-    const textoHora = document.createElement("p")
-    var textoConteudoH = document.createTextNode(localStorage.hora)    
-    
-    textoAtividade.appendChild(textoConteudoA)
-    textoDia.appendChild(textoConteudoD)
-    textoHora.appendChild(textoConteudoH)
+function novoCard(tarefa) {
 
-    var conteudoHora = document.getElementById("cardsHora")
-    conteudoHora.classList.add("cardshorap")
-    conteudoHora.appendChild(textoConteudoH)
-    var conteudoAtividade = document.getElementById("cardAtividades")
-    conteudoAtividade.classList.add("cardsatividadep")
-    conteudoAtividade.appendChild(textoConteudoA)
+    var sectionCardHora = document.createElement("section");
+    sectionCardHora.classList.add("cards-hora")
+    sectionCardHora.classList.add("cardshorap")
+
+    var sectionCardAtividade = document.createElement("section");
+    sectionCardAtividade.classList.add("cards-atividades")
+    sectionCardAtividade.classList.add("cardsatividadep")
+
+    var textoAtividade = document.createElement("p")
+    var textoConteudoA = document.createTextNode(tarefa.atividade)
+    textoAtividade.appendChild(textoConteudoA)
+
+    var textoDia = document.createElement("p")
+    var textoConteudoD = document.createTextNode(tarefa.dia)
+    textoDia.appendChild(textoConteudoD)
+    const textoHora = document.createElement("p")
+    var textoConteudoH = document.createTextNode(tarefa.hora)    
+    textoHora.appendChild(textoConteudoH)
+    
+    sectionCardHora.appendChild(textoHora)
+    sectionCardAtividade.appendChild(textoAtividade)
+
+    var atividades = document.getElementById("atividades")
+    atividades.appendChild(sectionCardAtividade)
+    
+    var colunaHora = document.getElementById("colunaHora")
+    colunaHora.appendChild(sectionCardHora)
 }
- 
-if (localStorage.atividade, localStorage.dia, localStorage.hora) {
-    novoCard()
+
+function mostraCards(dia) {
+    limparCards();
+    let tarefasSalvas = JSON.parse(localStorage.getItem('tarefas'))
+    tarefasSalvas = tarefasSalvas.filter(tarefasSalvas => tarefasSalvas.dia === dia);
+    for (let index = 0; index < tarefasSalvas.length; index++) {
+        novoCard(tarefasSalvas[index]);
+        
+    }
 }
+
+function limparCards(){
+    var listaElementsHora = document.getElementsByClassName("cards-hora", "cardshorap")
+    var listaElementsAtividade = document.getElementsByClassName("cards-atividades", "cardsatividadep")
+    var numeroElements = listaElementsHora.length;
+    if(numeroElements > 0){
+    for (let index = numeroElements; index > 0; index--) {
+        listaElementsHora[index-1].remove(); 
+    }
+
+    for (let index = numeroElements; index > 0; index--) {
+        listaElementsAtividade[index-1].remove(); 
+    }
+    }
+}
+
+let tarefasSalvas = JSON.parse(localStorage.getItem('tarefas'))
+if (tarefasSalvas != null && tarefasSalvas.length > 0) {
+    mostraCards();
+}
+
+
